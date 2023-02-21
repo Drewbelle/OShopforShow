@@ -1,0 +1,27 @@
+@import './variables.scss';
+@import './main-file/main-file-main.scss';
+@import './main-file/main-file-courusel.scss';
+@import './main-file/main-file-catalog-block.scss';
+@import './main-file/main-file-catalog-show-more.scss';
+@import './main-file/main-file-parametrs-block.scss';
+
+body, html {
+    background: $main-bgimage;
+    min-height: 100%;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+*{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 35px;
+    font-size: 10px;
+    font-family: 'Dancing Script', cursive;
+}
+
+

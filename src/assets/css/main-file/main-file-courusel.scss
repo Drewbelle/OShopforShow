@@ -1,0 +1,74 @@
+.courusel {
+    width: 100vw;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(130, 125, 209);
+    border-top: 1px solid white;
+}
+.couruselLeft {
+    width: 50px;
+    height: 50px;
+    border-bottom-right-radius: 999px;
+    border-top-right-radius: 999px;
+    background-color: rgba(130, 125, 209);
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+.couruselLeft::before {
+    content: "";
+    border-top: 3px solid white;
+    border-left: 3px solid white;
+    border-radius: 5px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 35%;
+    right: 25%;
+    transform: rotate(-45deg);
+    cursor: pointer;
+}
+.couruselLeft:hover::before {
+    border-color: orange;
+}
+.couruselRight {
+    width: 50px;
+    height: 50px;
+    border-bottom-left-radius: 999px;
+    border-top-left-radius: 999px;
+    background-color: rgba(130, 125, 209);
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.couruselRight::before {
+    content: "";
+    border-top: 3px solid white;
+    border-right: 3px solid white;
+    border-radius: 5px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    top: 35%;
+    left: 25%;
+    transform: rotate(45deg);
+    cursor: pointer;
+}
+.couruselRight:hover::before {
+    border-color: orange;
+}
+
+
+@media (max-width: 1023px) {
+    .courusel {
+        width: 100vw;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(130, 125, 209);
+        border-top: 1px solid white;
+    }
+}
