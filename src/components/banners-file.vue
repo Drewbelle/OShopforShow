@@ -26,7 +26,11 @@
         bannerClick() {
             this.$emit('bannerClick', this.banner_data)
         }
-    }
+    },
+    mounted() {
+            console.log(this.banner_data)
+            //получаем список  из db.json и заносим в массив chars в store
+        },
 }
 </script>
 
