@@ -254,12 +254,12 @@ export let store = new Vuex.Store({
             commit('SETSEARCHVALUETOSTATE', value)
         },
         GETBANNERSFROMAPI({commit}) {
-            return axios('https://o-shopfor-show.vercel.app/db.json/Banners',{
+            return axios('https://o-shopfor-show.vercel.app/db.json',{
                 method: "GET"
             })
-                .then((Banners) =>{
-                    commit('SETBANNERSTOSTATE', Banners.data)
-                    return Banners
+                .then((res) =>{
+                    commit('SETBANNERSTOSTATE', res['Banners'].data)
+                    return res
                 })
                 .catch(console.log('error'))
         },
