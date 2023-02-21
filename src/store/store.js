@@ -254,7 +254,7 @@ export let store = new Vuex.Store({
             commit('SETSEARCHVALUETOSTATE', value)
         },
         GETBANNERSFROMAPI({commit}) {
-            return axios('http://localhost:3000/Banners',{
+            return axios('https://ca9e-5-165-45-124.eu.ngrok.io/Banners',{
                 method: "GET"
             })
                 .then((Banners) =>{
@@ -264,7 +264,7 @@ export let store = new Vuex.Store({
                 .catch(console.log('error'))
         },
         GETGOODSSFROMAPI({commit}) {
-            return axios('http://localhost:3000/Goods',{
+            return axios('https://ca9e-5-165-45-124.eu.ngrok.io/Goods',{
                 method: "GET"
             })
                 .then((Goods) =>{
