@@ -26,9 +26,6 @@
         bannerClick() {
             this.$emit('bannerClick', this.banner_data)
         }
-    },
-    mounted() {
-        console.log(banner_data)
     }
 }
 </script>
