@@ -267,10 +267,9 @@ export let store = new Vuex.Store({
             return axios('https://o-shopfor-show.vercel.app/db.json',{
                 method: "GET"
             })
-                .then((res) =>{
-                    commit('SETGOODSTOGOODS', res)
-                    console.log(res.data.Goods)
-                    return res
+                .then((resGoods) =>{
+                    commit('SETGOODSTOGOODS', resGoods.data.Goods)
+                    return resGoods
                 })
                 .catch(console.log('error'))
         },
