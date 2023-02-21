@@ -259,18 +259,19 @@ export let store = new Vuex.Store({
             })
                 .then((res) =>{
                     commit('SETBANNERSTOSTATE', res)
-                    console.log(res.data)
+                    console.log(res.data.Banners)
                     return res
                 })
                 .catch(console.log('error'))
         },
         GETGOODSSFROMAPI({commit}) {
-            return axios('https://o-shopfor-show.vercel.app/db.json/Goods',{
+            return axios('https://o-shopfor-show.vercel.app/db.json',{
                 method: "GET"
             })
-                .then((Goods) =>{
-                    commit('SETGOODSTOGOODS', Goods.data)
-                    return Goods
+                .then((res) =>{
+                    commit('SETGOODSTOGOODS', res)
+                    console.log(res.data.Goods)
+                    return res
                 })
                 .catch(console.log('error'))
         },
