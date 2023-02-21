@@ -259,7 +259,7 @@ export let store = new Vuex.Store({
             })
                 .then((res) =>{
                     commit('SETBANNERSTOSTATE', res)
-                    console.log(res[0].data)
+                    console.log(res[0])
                     return res
                 })
                 .catch(console.log('error'))
