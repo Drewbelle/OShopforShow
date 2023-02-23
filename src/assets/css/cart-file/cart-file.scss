@@ -10,6 +10,7 @@
     margin-bottom: 30px;
 
     @include smallmobile {
+        height: 100vh;
         margin: 0;
     }
     .fakeTableTop {
@@ -58,7 +59,12 @@
         color: rgba(125, 209, 167);
         z-index: 2;
 
-        @include mobileTabletsmallNote {
+        @include smallmobile {
+            top: 0;
+            right: 0;
+            width: 60px;
+        }
+        @include tabletsmallNote {
             width: 100px;
             height: 25px;
             background-color: $main-color;
