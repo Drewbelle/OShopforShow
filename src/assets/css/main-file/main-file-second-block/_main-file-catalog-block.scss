@@ -240,16 +240,17 @@
                 margin-left: 10px;
                 
                 @include smallmobile {
+                    margin-left: 0;
                     width: 100%;
                 }
                 .linkLayer, .linkContrast, .linkBase {
+                    @include smallmobile {
+                        margin-left: 10px;
+                    }
                     @include links-in-sec-block();
                     &:hover {
                         text-decoration: underline;
                     }
-                }
-                .linkLayer {
-                    margin: 0;
                 }
             }
         }

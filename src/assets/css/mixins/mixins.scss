@@ -1,48 +1,61 @@
+$mobile: 999px;
+$tablet: 767px;
+$desktop: 1000px;
+$xxs-desktop: 1024px;
+$xs-desktop: 1200px;
+$sm-desktop: 1280px;
+$m-desktop: 1455px;
+$xl-desktop: 1600px;
+$xl-mobile: 479px;
+$xs-mobile: 374px;
+$x-mobile: 359px;
+$xxs-mobile: 320px;
+
 //adaptive mixins//
 @mixin smallmobile() {
-    @media (max-width: 320px) {
+    @media (max-width: #{$xxs-mobile}) {
         @content;
     }
 }
 
 @mixin tablet() {
-    @media (min-width: 321px) and (max-width: 768px) {
+    @media (min-width: #{$xxs-mobile + 1}) and (max-width: #{$tablet}) {
         @content;
     }
 }
 
 @mixin smallNote() {
-    @media (min-width: 769px) and (max-width: 1024px) {
+    @media (min-width: #{$tablet + 1}) and (max-width: #{$xxs-desktop}) {
         @content;
     }
 }
 
 @mixin tabletsmallNote() {
-    @media (min-width: 321px) and (max-width: 1024px) {
+    @media (min-width: #{$xxs-mobile + 1}) and (max-width: #{$xxs-desktop}) {
         @content;
     }
 }
 
 @mixin mobileTabletsmallNote() {
-    @media (max-width: 1024px) {
+    @media (max-width: #{$xxs-desktop}) {
         @content;
     }
 }
 
 @mixin notebook() {
-    @media (min-width: 1025px) and (max-width: 1440px) {
+    @media (min-width: #{$xxs-desktop + 1}) and (max-width: #{$m-desktop}) {
         @content;
     }
 }
 
 @mixin withoutforK() {
-    @media (max-width: 1441px) {
+    @media (max-width: #{$m-desktop}) {
         @content;
     }
 }
 
 @mixin forKMonitor() {
-    @media (min-width: 1440px) {
+    @media (min-width: #{$m-desktop}) {
         @content;
     }
 }

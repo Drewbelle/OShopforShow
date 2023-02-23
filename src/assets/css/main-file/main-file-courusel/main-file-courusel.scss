@@ -9,6 +9,7 @@
     border-top: 1px solid white;
 
     @include smallmobile {
+        width: 320px;
         height: 150px;
     }
     @include tabletsmallNote {

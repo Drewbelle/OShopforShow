@@ -83,17 +83,28 @@
         align-items: center;
         position: relative;
 
+        @include smallmobile {
+            width: 100%;
+        }
         .GoodsItemsName {
             height: 20px;
             width: 190px;
             line-height: 20px;
             font-size: 10px;
+
+            @include smallmobile {
+                width: 100%;
+            }
         }
         .GoodsItemPrice {
             height: 20px;
             width: 190px;
             color: orange;
             line-height: 20px;
+            
+            @include smallmobile {
+                width: 100%;
+            }
         }
         .GoodsItemPriceSales {
             height: 20px;
