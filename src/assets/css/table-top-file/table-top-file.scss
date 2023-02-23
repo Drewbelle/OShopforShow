@@ -12,8 +12,8 @@
     @include smallmobile {
         height: 40px;
     }
-    @include mobileTabletsmallNote {
-        height: 60px;
+    @include smallNote {
+        height: 200px;
     }
 
     .topColorLine {
