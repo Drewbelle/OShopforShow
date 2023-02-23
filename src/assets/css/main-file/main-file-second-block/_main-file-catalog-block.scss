@@ -1,0 +1,284 @@
+@import '@/assets/css/mixins/mixins.scss';
+.catalogBlock {
+    width: 352px;
+    height: 472px;
+    margin: 30px 15px 30px 30px;
+    border: 1px solid rgba(88, 88, 88, 0.473);
+    z-index: 1;
+
+    @include smallmobile {
+        margin: 0;
+        width: 100vw;
+        border: none;
+    }
+    @include notebook {
+        margin-left: 0;   
+        margin-right: 0;
+    }
+    &:hover {
+        box-shadow: -3px 1px 10px 0 black;
+    }
+
+    .catalog {
+        width: 350px;
+        height: 100px;
+        background-color: white;
+        background-size: 350px 100px;
+        display: flex;
+        align-items: center;
+        transition-property: all;
+        transition: 1.5s;
+        text-decoration: none;
+
+        @include smallmobile {
+            width: 100%;
+        }
+        &:hover {
+            background-color: rgb(236, 236, 236);
+        }
+        .marginCatalog {
+            width: 350px;
+            height: 80px;
+            margin: 10px 0px 10px 10px;
+            
+            @include smallmobile {
+                width: 100%;
+                margin: 0;
+            }
+            .linkCatalog {
+                @include links-in-sec-block-50px();
+    
+                &:visited {
+                    color: black;
+                }
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+    
+            .linksInCatalog {
+                height: 30px;
+                display: flex;
+                margin-left: 10px;
+    
+                .linkNews, .linkHits, .linkSales {
+                    @include links-in-sec-block();
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .linkNews {
+                    margin-left: 0;
+                }
+                .linkSales {
+                    color: orange;
+    
+                    &:hover {
+                        color: red;
+                    }
+                }
+            }
+        }
+    }
+
+    .tableGames {
+        width: 350px;
+        height: 130px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        transition-property: all;
+        transition: 1.5s;
+        text-decoration: none;
+        
+        @include smallmobile {
+            width: 100%;
+        }
+        &:hover {
+            background-color: rgb(236, 236, 236);
+        }
+        .marginTableGames {
+            width: 350px;
+            height: 110px;
+            margin: 10px 0px 10px 10px;
+            
+            @include smallmobile {
+                width: 100%;
+                margin: 0;
+            }
+            .linkTableGames {
+                @include links-in-sec-block-50px();
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .linksInTableGames {
+                height: 60px;
+                width: 300px;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 10px;
+    
+                .linkPartyTableGames, .linkCardsTablesGames, .linkClassicTablesGames, .linkCoopTableGames, .linkRolePlayTableGames, .linkDetectiveTableGames {
+                    @include links-in-sec-block();
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .linkPartyTableGames, .linkRolePlayTableGames {
+                    margin: 0;
+                }
+            }
+        }
+    }
+
+    .warhammer {
+        width: 350px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        transition-property: all;
+        transition: 1.5s;
+        text-decoration: none;
+        
+        @include smallmobile {
+            width: 100%;
+        }
+        &:hover {
+            background-color: rgb(236, 236, 236);
+        }
+        .marginWarhammer {
+            width: 350px;
+            height: 50px;
+            margin: 10px 0px 10px 10px;
+            
+            @include smallmobile {
+                width: 100%;
+                margin: 0;
+            }
+            .linkWarhammer {
+                @include links-in-sec-block-50px();
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+    
+    .manchikin {
+        width: 350px;
+        height: 70px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        transition-property: all;
+        transition: 1.5s;
+        text-decoration: none;
+    
+        @include smallmobile {
+            width: 100%;
+        }
+        &:hover {
+            background-color: rgb(236, 236, 236);
+        }
+        .marginManchikin {
+            width: 350px;
+            height: 50px;
+            margin: 10px 0px 10px 10px;
+            
+            @include smallmobile {
+                width: 100%;
+                margin: 0;
+            }
+            .linkManchikin {
+                @include links-in-sec-block-50px();
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    .paints {
+        width: 350px;
+        height: 100px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        transition-property: all;
+        transition: 1.5s;
+        text-decoration: none;
+        
+        @include smallmobile {
+            width: 100%;
+            margin-bottom: 0;
+        }
+        &:hover {
+            background-color: rgb(236, 236, 236);
+        }
+        .marginPaints {
+            width: 350px;
+            height: 80px;
+            margin: 10px 0px 10px 10px;
+            
+            @include smallmobile {
+                width: 100%;
+                margin: 0;
+            }
+            .linkPaints {
+                @include links-in-sec-block-50px();
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .linksInPaints {
+                width: 350px;
+                height: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: 10px;
+                
+                @include smallmobile {
+                    width: 100%;
+                }
+                .linkLayer, .linkContrast, .linkBase {
+                    @include links-in-sec-block();
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+                .linkLayer {
+                    margin: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+.SelectFile{
+    height: 20px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 20px;
+    background-color: white;
+
+    &:hover {
+        background-color: rgba(255, 166, 0, 0.493);
+    }
+}

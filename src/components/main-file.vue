@@ -2,13 +2,12 @@
     <TabletopFile 
     />
     <div class="MainFile">
-        <div class="newAd" v-bind:style="visibleAd" @click="goToAdGood()" v-if="windowW > 320">
+        <div class="newAd" v-bind:style="visibleAd" @click="goToAdGood()">
             <div class="closeAd" @click.stop="closeAd()">X</div>
         </div> 
         <div class="fakeTableTop"></div>
         <div class="mainContent">
             <div class="courusel"
-            v-if="windowW > 321"
             @mouseover="stopCouruselAuto"
             @mouseleave="startCouruselAuto">
                 <div class="couruselLeft" 
@@ -24,64 +23,63 @@
                 </div>
                 <div class="couruselRight" @click="couruselRight"/>
             </div>
-            <div class="secondBlockSearchContent" v-if="windowW > 321">
+            <div class="secondBlockSearchContent">
                 <div class="catalogBlock">
-                    <div class="saveBlock"></div>
 
                     <div class="catalog"
-                    @mouseover="showMoreCatalog"
-                    @mouseleave="closeMoreCatalog">
+                    @mouseenter  ="showMoreFuncOpen($event)"
+                    @mouseleave ="showMoreFuncClose($event)">
                         <div class="marginCatalog">
-                            <RouterLink to="/Catalog" class="linkCatalog">Catalog</RouterLink> 
+                            <RouterLink to="/Catalog" class="linkCatalog hoverlink">Catalog</RouterLink> 
                             <ul class="linksInCatalog">
-                                <li class="linkNews"  @click="findForLinks($event)">News</li>
-                                <li class="linkHits"  @click="findForLinks($event)">Hits</li>
-                                <li class="linkSales"  @click="findForLinks($event)">%Sales%</li>
+                                <li class="linkNews hoverlink"  @click="findForLinks($event)">News</li>
+                                <li class="linkHits hoverlink"  @click="findForLinks($event)">Hits</li>
+                                <li class="linkSales hoverlink"  @click="findForLinks($event)">%Sales%</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="tableGames"
-                    @mouseover="showMoreTableGames"
-                    @mouseleave="closeMoreTableGames">
+                    @mouseenter  ="showMoreFuncOpen($event)"
+                    @mouseleave ="showMoreFuncClose($event)">
                         <div class="marginTableGames">
-                            <div class="linkTableGames" @click="findForLinks($event)">Table Games</div>
+                            <div class="linkTableGames hoverlink" @click="findForLinks($event)">Table Games</div>
                             <ul class="linksInTableGames">
-                                <li class="linkPartyTableGames" @click="findForLinks($event)">Party</li>
-                                <li class="linkCardsTablesGames" @click="findForLinks($event)">Card</li>
-                                <li class="linkClassicTablesGames" @click="findForLinks($event)">Classic</li>
-                                <li class="linkCoopTableGames" @click="findForLinks($event)">Cooperative</li>
-                                <li class="linkRolePlayTableGames" @click="findForLinks($event)">Role Play</li>
-                                <li class="linkDetectiveTableGames" @click="findForLinks($event)">Detective</li>
+                                <li class="linkPartyTableGames hoverlink" @click="findForLinks($event)">Party</li>
+                                <li class="linkCardsTablesGames hoverlink" @click="findForLinks($event)">Card</li>
+                                <li class="linkClassicTablesGames hoverlink" @click="findForLinks($event)">Classic</li>
+                                <li class="linkCoopTableGames hoverlink" @click="findForLinks($event)">Cooperative</li>
+                                <li class="linkRolePlayTableGames hoverlink" @click="findForLinks($event)">Role Play</li>
+                                <li class="linkDetectiveTableGames hoverlink" @click="findForLinks($event)">Detective</li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="warhammer"
-                    @mouseover="showMoreWarhammer"
-                    @mouseleave="closeMoreWarhammer">
+                    @mouseenter  ="showMoreFuncOpen($event)"
+                    @mouseleave ="showMoreFuncClose($event)">
                         <div class="marginWarhammer">
-                            <div class="linkWarhammer" @click="findForLinks($event)">Warhammer</div>
+                            <div class="linkWarhammer hoverlink" @click="findForLinks($event)">Warhammer</div>
                         </div>
                     </div>
 
                     <div class="manchikin"
-                    @mouseover="showMoreManchikin"
-                    @mouseleave="closeMoreManchikin">
+                    @mouseenter  ="showMoreFuncOpen($event)"
+                    @mouseleave ="showMoreFuncClose($event)">
                         <div class="marginManchikin">
-                            <div class="linkManchikin" @click="findForLinks($event)">Manchikin</div>
+                            <div class="linkManchikin hoverlink" @click="findForLinks($event)">Manchikin</div>
                         </div>
                     </div>
 
                     <div class="paints"
-                    @mouseover="showMorePaints"
-                    @mouseleave="closeMorePaints">
+                    @mouseenter  ="showMoreFuncOpen($event)"
+                    @mouseleave ="showMoreFuncClose($event)">
                         <div class="marginPaints">
-                            <div class="linkPaints" @click="findForLinks($event)">Paints</div>
+                            <div class="linkPaints hoverlink" @click="findForLinks($event)">Paints</div>
                             <ul class="linksInPaints">
-                                <li class="linkLayer" @click="findForLinks($event)">Layer</li>
-                                <li class="linkContrast" @click="findForLinks($event)">Contrast</li>
-                                <li class="linkBase" @click="findForLinks($event)">Base</li>
+                                <li class="linkLayer hoverlink" @click="findForLinks($event)">Layer</li>
+                                <li class="linkContrast hoverlink" @click="findForLinks($event)">Contrast</li>
+                                <li class="linkBase hoverlink" @click="findForLinks($event)">Base</li>
                             </ul>
                         </div>
                     </div>
@@ -89,8 +87,8 @@
 
                 <div class="catalogShowMore"
                 v-if="windowW > 1023"
-                @mouseover="showMoreCatalog"
-                @mouseleave="closeMoreCatalog">
+                @mouseenter  ="showMoreFuncOpen($event)"
+                @mouseleave ="showMoreFuncClose($event)">
                     <div class="catalogShowMoreMainLink">
                         <div class="catalogShowMoreNewsLink">News
                             <ul class="newsCatalog">
@@ -114,8 +112,8 @@
 
                 <div class="tableGamesShowMore"
                 v-if="windowW > 1023"
-                @mouseover="showMoreTableGames"
-                @mouseleave="closeMoreTableGames">
+                @mouseenter  ="showMoreFuncOpen($event)"
+                @mouseleave ="showMoreFuncClose($event)">
                     <div class="tableGamesShowMoreMainLink">
                         <div class="tableGamesShowMoreGenresLink">Genres
                             <ul class="genresTG">
@@ -140,24 +138,24 @@
 
                 <div class="warhammerShowMore"
                 v-if="windowW > 1023"
-                @mouseover="showMoreWarhammer"
-                @mouseleave="closeMoreWarhammer">
+                @mouseenter  ="showMoreFuncOpen($event)"
+                @mouseleave ="showMoreFuncClose($event)">
                     <div class="warhammerShowMoreMainLink">Warhammer</div>
                     <div class="warhammerShowMoreBottomPicture"></div>
                 </div>
 
                 <div class="manchikinShowMore"
                 v-if="windowW > 1023"
-                @mouseover="showMoreManchikin"
-                @mouseleave="closeMoreManchikin">
+                @mouseenter  ="showMoreFuncOpen($event)"
+                @mouseleave ="showMoreFuncClose($event)">
                     <div class="manchikinShowMoreMainLink">Manchikin</div>
                     <div class="manchikinShowMoreBottomPicture"></div>
                 </div>
 
                 <div class="paintsShowMore"
                 v-if="windowW > 1023"
-                @mouseover="showMorePaints"
-                @mouseleave="closeMorePaints">
+                @mouseenter  ="showMoreFuncOpen($event)"
+                @mouseleave ="showMoreFuncClose($event)">
                     <div class="paintsShowMoreMainLink">Paints
                         <ul class="linksPnts">
                             <li class="linkSMPnt" @click="findForLinks($event)">Layer</li>
@@ -300,9 +298,11 @@
     import TabletopFile from '../components/tabletop-file.vue'
     import BannersFile from '../components/banners-file.vue'
     import FooterFile from '../components/footer-file.vue'
+    import calcWindowMixin from './mixinsForComponents/calcWindow-mixin';
     import { mapGetters, mapActions } from 'vuex';
     export default {
         name: 'MainFile',
+        mixins: [calcWindowMixin],
         components: {
             BannersFile,
             TabletopFile,
@@ -311,6 +311,14 @@
         props: {},
         data() {
             return {
+                renameCategories: '',
+                couruselAuto: null,
+                couruselNums: 0,
+                leftBorder: 1,
+                rightBorder: 0,
+                couruselContentDynamicStyle: {
+                    marginLeft: '0px',
+                },
                 searchByCBAndS: {
                     tags: [],
                     minPrice: null,
@@ -391,7 +399,6 @@
                     borderRadius: '5px',
                     backgroundColor: 'rgba(130, 125, 209)',
                 },
-                windowW: '',
                 visibleAd: {
                     opacity: 1
                 },
@@ -403,26 +410,13 @@
                 checkBoxTopHeight: {
                     top: null
                 },
-                renameCategories: '',
-                couruselAuto: null,
-                couruselNums: 0,
-                leftBorder: 1,
-                rightBorder: 0,
-                couruselContentDynamicStyle: {
-                    height: '340px',
-                    marginLeft: '0px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    transition: '2s',
-                    zIndex: '0',
-                    overflow: 'hidden'
-                }
             }
         },
         computed: {
             ...mapGetters([
                 'GOODSFORGOODSHOW', 'GETBANNERS', 'GETGOODS', 'GETSEARCHGOODS'// получаем массив banners из store
             ]),
+            //Колличество найденого товара//
             searchByCBAndSResult() {
                 let result = [] 
                 let finallyResult = []
@@ -454,6 +448,10 @@
             }
         },
         methods: {
+            ...mapActions([
+                'GETBANNERSFROMAPI', 'GETGOODSSFROMAPI', 'MAKEGOODSNULL', 'DESTROYSEARCHVALUE', 'MAKESEARCHGOODSNULL', 'GETSEARCHGOODSTOVUEX', 'SEARCHBYCATEGORIES', 'GETGOODSFORGOODSHOW'
+            ]),
+            //Добавление выбранного тега в поисковой массив//
             addToSearchByCBAndS($event) {
                 if ( this.searchByCBAndS.tags.includes($event.target.innerText) ) {
                     var index = this.searchByCBAndS.tags.indexOf($event.target.innerText)
@@ -463,9 +461,7 @@
                     this.searchByCBAndS.tags.push($event.target.innerText)
                 }
             },
-            calcWindowW() {
-            this.windowW = window.innerWidth
-            },
+            //Подсчёт Цены, игроков, Времени и Возраста//
             calcSliders() {
                 var sortArr = []
                 this.GETGOODS.forEach(element => {
@@ -502,9 +498,7 @@
                 sortArr.sort((a, b) => b - a)
                 this.maxPrice = sortArr[0]
             },
-            ...mapActions([
-                'GETBANNERSFROMAPI', 'GETGOODSSFROMAPI', 'MAKEGOODSNULL', 'DESTROYSEARCHVALUE', 'MAKESEARCHGOODSNULL', 'GETSEARCHGOODSTOVUEX', 'SEARCHBYCATEGORIES', 'GETGOODSFORGOODSHOW'
-            ]),
+            //Движение карусели влево//
             couruselLeft() {
                 var banner = document.querySelector('.BannersFile')
                 var bannersWidth = window.getComputedStyle(banner).width
@@ -520,6 +514,7 @@
                 }
                 else this.couruselContentDynamicStyle.marginLeft = ((Number(bwnum) + (Number(bmnum) * 2)) * this.couruselNums) + 'px'
             },
+            //Движение карусели вправо//
             couruselRight() {
                 var banner = document.querySelector('.BannersFile')
                 var bannersWidth = window.getComputedStyle(banner).width
@@ -536,6 +531,13 @@
                 }
                 else this.couruselContentDynamicStyle.marginLeft = ((Number(bwnum) + (Number(bmnum) * 2)) * this.couruselNums) + 'px'
             },
+            //Запуск автоматического движения карусели//
+            startCouruselAuto() {
+                if (this.windowW > 321) {
+                    this.couruselAuto = setInterval(this.couruselAutoFunc, 5000)
+                }
+            },
+            //Функция изменения направления движения карусели//
             couruselAutoFunc() {
                 if (this.leftBorder === 1 && this.rightBorder === 0) {
                     this.couruselRight()
@@ -544,53 +546,40 @@
                     this.couruselLeft()
                 }
             },
-            startCouruselAuto() {
-                if (this.windowW > 320) {
-                    this.couruselAuto = setInterval(this.couruselAutoFunc, 5000)
-                }
-            },
+            //Остановка карусели при наведении на неё мыши//
             stopCouruselAuto() {
                 clearInterval(this.couruselAuto)
             },
-            showMoreCatalog() {
-                document.querySelector('.catalogShowMore').style.visibility = 'visible'
+            //Открытие/Закрытие второго окна в левой части second block//
+            showMoreFuncOpen($event) {
+                let eventShowMore = $event.target.className
+                if (document.querySelector('.' + eventShowMore + 'ShowMore')) {
+                    document.querySelector('.' + eventShowMore + 'ShowMore').style.visibility = 'visible'
+                }
+                else if (document.querySelector('.' + eventShowMore))
+                document.querySelector('.' + eventShowMore).style.visibility = 'visible'
             },
-            closeMoreCatalog() {
-                document.querySelector('.catalogShowMore').style.visibility = 'hidden'
+            showMoreFuncClose($event) {
+                let eventShowMore = $event.target.className
+                if (document.querySelector('.' + eventShowMore + 'ShowMore')) {
+                    document.querySelector('.' + eventShowMore + 'ShowMore').style.visibility = 'hidden'
+                }
+                else if (document.querySelector('.' + eventShowMore))
+                document.querySelector('.' + eventShowMore).style.visibility = 'hidden'
             },
-            showMoreTableGames() {
-                document.querySelector('.tableGamesShowMore').style.visibility = 'visible'
-            },
-            closeMoreTableGames() {
-                document.querySelector('.tableGamesShowMore').style.visibility = 'hidden'
-            },
-            showMoreWarhammer() {
-                document.querySelector('.warhammerShowMore').style.visibility = 'visible'
-            },
-            closeMoreWarhammer() {
-                document.querySelector('.warhammerShowMore').style.visibility = 'hidden'
-            },
-            showMoreManchikin() {
-                document.querySelector('.manchikinShowMore').style.visibility = 'visible'
-            },
-            closeMoreManchikin() {
-                document.querySelector('.manchikinShowMore').style.visibility = 'hidden'
-            },
-            showMorePaints() {
-                document.querySelector('.paintsShowMore').style.visibility = 'visible'
-            },
-            closeMorePaints() {
-                document.querySelector('.paintsShowMore').style.visibility = 'hidden'
-            },
+            //Поиск товара по клику на элемент в каруселе//
             bannerClick(Banner) {
                 this.$router.push({name: 'goodpage', query: {'Good': Banner.bannerid}})
             },
+            //Переход к товару по рекламке//
             goToAdGood() {
                 this.$router.push({name: 'goodpage', query: {'Good': 16}})
             },
+            //Закрыть рекламку//
             closeAd() {
                 this.visibleAd.opacity = 0
             },
+            //Поиск товара по тегу, по линкам//
             findForLinks($event) {
                 this.DESTROYSEARCHVALUE()
                 this.MAKESEARCHGOODSNULL()
@@ -604,24 +593,27 @@
                 this.SEARCHBYCATEGORIES(this.renameCategories)
                 this.$router.push('Catalog')
             },
-            searchByCBAndSShowGoods(searchByCBAndSResult) {
-                this.MAKESEARCHGOODSNULL()
-                this.GETSEARCHGOODSTOVUEX(searchByCBAndSResult)
-                this.$router.push('Catalog')
-            },
+            //Поиск товара по нескольким тегам, по линкам//
             searchByNonStandardCategories($event) {
                 this.DESTROYSEARCHVALUE()
                 this.MAKESEARCHGOODSNULL()
                 this.renameCategories = $event.target.innerText
                 this.SEARCHBYCATEGORIES(this.renameCategories)
                 this.$router.push('Catalog')
-            }
+            },
+            //Поиск товара по слайдерам + чекбоксам//
+            searchByCBAndSShowGoods(searchByCBAndSResult) {
+                this.MAKESEARCHGOODSNULL()
+                this.GETSEARCHGOODSTOVUEX(searchByCBAndSResult)
+                this.$router.push('Catalog')
+            },
         },
         watch: {
             GETGOODS() {
                 this.GETGOODSFORGOODSHOW(this.GETGOODS)
                 this.calcSliders()
             },
+            //Изменение положения тамблера и цветной полосы в зависимости от значения цены/возраста/времени/игроков//
             minPrice() {
                 if (Number(this.minPrice) > Number(this.maxPrice)) {
                     let tmp = this.minPrice
@@ -673,7 +665,7 @@
             }
         },
         mounted() {
-            this.GETGOODSSFROMAPI(), this.GETBANNERSFROMAPI(), this.startCouruselAuto(), this.calcWindowW()
+            this.GETGOODSSFROMAPI(), this.GETBANNERSFROMAPI(), this.startCouruselAuto()
             //получаем список  из db.json и заносим в массив chars в store
         },
         unmounted() {

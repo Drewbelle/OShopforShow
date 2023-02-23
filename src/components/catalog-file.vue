@@ -44,9 +44,11 @@
     import FooterFile from '../components/footer-file.vue'
     import TabletopFile from '../components/tabletop-file.vue'
     import GoodsItemsFile from '../components/GoodsItemsFile'
+    import calcWindowMixin from './mixinsForComponents/calcWindow-mixin'
     import { mapActions, mapGetters } from 'vuex'
     export default {
         name: 'CatalogFile',
+        mixins: [calcWindowMixin],
         components: {
             GoodsItemsFile,
             TabletopFile,
@@ -57,7 +59,6 @@
         },
         data() {
             return {
-                windowW: 0,
                 defaultColor: {},
                 goodsInPages: 9,
                 pageNumber: 1,
@@ -110,9 +111,6 @@
                     }
                 }
             },
-            calcWindowW() {
-            this.windowW = window.innerWidth
-            },
             returnFirstPage() {
                 this.pageNumber = 1 
             },
@@ -151,7 +149,7 @@
             },
         },
         mounted() {
-            this.GETGOODSSFROMAPI(), this.changeR543(), this.calcWindowW()  //получаем список  из db.json и заносим в массив в store
+            this.GETGOODSSFROMAPI(), this.changeR543()  //получаем список  из db.json и заносим в массив в store
         },
         unmounted() {
             this.GETGOODSFORGOODSHOW(this.GETGOODS), this.MAKEGOODSNULL(), this.DESTROYSEARCHVALUE(), this.MAKESEARCHGOODSNULL(), this.DESTROYSEARCHBYCATEGORIES()
@@ -159,155 +157,5 @@
     }
 </script>
 
-<style scoped>
-    .calatogFile{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        min-height: 100vh;
-        margin-bottom: 30px;
-    }
-    .fakeTableTop {
-        width: 100vw;
-        height: 80px;
-        background-color: black;
-    }
-    .searchInfo {
-        width: 600px;
-        height: 50px;
-        margin-top: 50px;
-        line-height: 50px;
-        text-align: center;
-        font-size: 20px;
-        background-color: rgba(130, 125, 209);
-        border: 1px solid black;
-        box-shadow: 3px 3px 5px black;
-    }
-    .searchInfoColored {
-        height: 50px;
-        font-size: 20px;
-        line-height: 50px;
-        color: orange
-    }
-    .allGoodsCatalogBlock {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 30px;
-        height: 100%;
-    }
-    .catalogField{
-        display: flex;
-        flex-wrap: wrap;
-        min-height: 100%;
-        width: 600px;
-        justify-content: space-around;
-    }
-    .catalogFieldSlim{
-        display: flex;
-        flex-wrap: wrap;
-        min-height: 100%;
-        width: 450px;
-        justify-content: space-around;
-    }
-    .pagination {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        height: 35px;
-        margin-top: 40px;
-        margin-bottom: 20px;
-    }
-    .page {
-        box-shadow: 3px 3px 15px black;
-        background-color: rgba(130, 125, 209);
-        border: 1px solid black;
-        padding: 8px;
-        transition-property: all;
-        transition: 1.5s;
-        margin: 0 5px 0 5px;
-    }
-    .page:hover {
-        box-shadow: 3px 3px 15px orange;
-        border: 1px solid rgb(143, 93, 0);
-        background-color: orange;
-        cursor: pointer;
-    }
-    .pageSelected {
-        box-shadow: 3px 3px 15px orange;
-        border: 1px solid rgb(143, 93, 0);
-        background-color: orange;
-        cursor: pointer;
-    }
-    .r543{
-        border-radius: 99px;
-        border: 3px;
-        background-color: rgba(130, 125, 209);
-        border-color: orange;
-        position: fixed;
-        bottom: calc(7vh - 25px);  
-        left: calc(95vw - 25px);
-        transition-property: all;
-        transition: 1s;
-        box-shadow: 3px 3px 15px black;
-    }
-
-
-
-    @media (max-width: 1023px) {
-        .fakeTableTop {
-            height: 60px;
-        }
-    }
-    @media (max-width: 320px) {
-        .searchInfo {
-            width: 100%;
-            height: 25px;
-            margin-top:10px;
-            line-height: 25px;
-            text-align: center;
-            font-size: 10px;
-            background-color: rgba(130, 125, 209);
-            border: 1px solid black;
-            box-shadow: 3px 3px 5px black;
-        }
-        .searchInfoColored {
-            height: 25px;
-            font-size: 10px;
-            line-height: 25px;
-            color: orange
-        }
-        .catalogField{
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 1px;
-            min-height: 100%;
-            width: 100%;
-        }
-        .catalogFieldSlim{
-            display: flex;
-            flex-wrap: wrap;
-            margin-top: 1px;
-            min-height: 100%;
-            width: 100%;
-        }
-        .page {
-            box-shadow: none;
-            height: 30px;
-            line-height: 30px;
-            font-size: 10px;
-            display: flex;
-            align-items: center;
-            background-color: rgba(130, 125, 209);
-            border: 1px solid black;
-            padding: 8px;
-            transition-property: all;
-            transition: 1.5s;
-            margin: 1px;
-        }
-        .fakeTableTop {
-            height: 60px;
-        }
-    }
+<style lang="scss">
 </style>

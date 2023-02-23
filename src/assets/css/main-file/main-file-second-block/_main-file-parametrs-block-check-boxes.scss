@@ -1,0 +1,71 @@
+.checkbox {
+    display: flex;
+    align-items: center;
+    margin: 5px 0 5px 0;
+    padding: 0 5px 0 5px;
+    width: 100px;
+    height: calc(340px / 6);
+    border: 1px solid orange;
+    border-style: inherit;
+    box-shadow: 3px 3px 5px 0 orange;
+    transition: all;
+    transition: 0.3s;
+
+    &:hover {
+        background-color: rgba(255, 227, 176, 0.25);
+        box-shadow: 1px 1px 2px 0 orange;
+    }
+    .cb {
+        display: none;
+
+        &:checked + .newcb::after {
+            opacity: 1;
+        }
+    }
+    .newcb {
+        display: flex;
+        width: 12px;
+        height: 12px;
+        border-radius: 99px;
+        background-color: rgb(255, 227, 176);
+        align-items: center;
+        justify-content: center;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            border-radius: 99px;
+            background-color: orange;
+            opacity: 0;
+        }
+    }
+    label {
+        margin-left: 5px;
+        line-height: 15px;
+
+        &:hover { 
+            color: orange;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+    }
+}
+.searchByCBAndSShowResult {
+    width: 100px;
+    height: 50px;
+    line-height: 25px;
+    z-index: 5;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 15px;
+
+    .searchByCBAndSShowGoods {
+        color: rgb(0, 161, 161);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}

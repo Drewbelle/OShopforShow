@@ -25,15 +25,5 @@
 }
 </script>
 
-<style>
-    .SelectFile{
-        height: 20px;
-        cursor: pointer;
-        text-align: center;
-        line-height: 20px;
-        background-color: white;
-    }
-    .SelectFile:hover {
-        background-color: rgba(255, 166, 0, 0.493);
-    }
+<style lang="scss">
 </style>

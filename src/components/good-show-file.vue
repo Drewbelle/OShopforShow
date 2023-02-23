@@ -5,7 +5,7 @@
         <div class="contentAndRecomended">
             <div class="GoodShowContent">
                 <div class="GoodShowImageCont">
-                    <img class="GoodShowImage" :src=" require('../assets/gameShopContent/' + findGood.url) " alt="https://google.com">
+                    <img class="GoodShowImage" :src=" require('@/assets/css/gameShopContent/' + findGood.url) " alt="https://google.com">
                 </div>
                 <div class="GoodShowInfo">
                     <div class="GoodShowName"> {{ findGood.name }} </div>
@@ -70,9 +70,11 @@
     import RandomRecomendedGoodShowFile from '../components/rand-rec-good-show-file.vue'
     import TabletopFile from '../components/tabletop-file.vue'
     import ButtonFile from '../components/button-file.vue'
+    import calcWindowMixin from './mixinsForComponents/calcWindow-mixin'
     import { mapGetters, mapActions} from 'vuex'
     export default {
         name: 'GoodShowFile',
+        mixins: [calcWindowMixin],
         components: {
             ButtonFile,
             TabletopFile,
@@ -83,7 +85,6 @@
         },
         data(){
             return {
-                windowW: '',
                 newGood: {},
                 IntervalGoodSlide: null,
                 GoodAddedSlide: {
@@ -95,9 +96,6 @@
             ...mapActions([
                 'ADDTOCART', 'GETGOODSSFROMAPI', 'MAKEGOODSNULL', 'GETGOODSSFROMAPI', 'MAKEGOODSNUL'
             ]),
-            calcWindowW() {
-            this.windowW = window.innerWidth
-            },
             addToCartRandGood(randRecomendedGood) {
                 this.ADDTOCART(randRecomendedGood)
                 this.GoodAddedSlide.right = '-10px'
@@ -147,7 +145,7 @@
             }
         },
         mounted() {
-            this.GETGOODSSFROMAPI(), this.calcWindowW()
+            this.GETGOODSSFROMAPI()
         },
         unmounted() {
             this.MAKEGOODSNULL()
@@ -156,411 +154,6 @@
     }
 </script>
 
-<style>
-    .GoodShowFile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100vw;
-        margin-bottom: 20px;
-        cursor: default;
-        position: relative;
-    }
-    .fakeTableTop {
-        width: 100vw;
-        height: 80px;
-        background-color: black;
-    }
-    .contentAndRecomended {
-        display: flex;
-    }
-    .GoodShowContent {
-        height: 450px;
-        width: 700px;
-        display: flex;
-        align-items: center;
-        background-color: white;
-        box-shadow: 1px 1px 10px black;
-        margin-top: 10px;
-        margin-right: 5px;
-        cursor: default;
-    }
-    .GoodShowImageCont {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 390px;
-        width: 340px;
-    }
-    .GoodShowImage {
-        height: 180px;
-        width: 150px;
-    }
-    .GoodShowInfo {
-        height: 390px;
-        width: 360px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-    .GoodShowName {
-        height: 70px;
-        width: 300px;
-        line-height: 35px;
-        font-size: 24px;
-        text-align: center;
-    }
-    .priceButArtGoodShow {
-        height: 150px;
-        width: 300px;
-        border: 2px solid orange;
-        border-style: dashed;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(236, 236, 236);
-        box-shadow: 1px 1px 10px black;
-    }
-    .priceAndArtGoodShow {
-        height: 70px;
-        width: 280px;
-        display: flex;
-        position: relative;
-    }
-    .GoodShowPrice {
-        height: 65px;
-        width: 190px;
-        line-height: 65px;
-        font-size: 24px;
-        text-align: center;
-        color: orange;
-    }
-    .GoodShowPriceSales {
-        height: 65px;
-        width: 190px;
-        line-height: 65px;
-        font-size: 24px;
-        text-align: center;
-        color: green;
-    }
-    .GoodShowPriceOld {
-        height: 25px;
-        width: 190px;
-        line-height: 25px;
-        font-size: 12px;
-        text-align: center;
-        color: rgb(255, 121, 121);
-        text-decoration: line-through;
-        position: absolute;
-        top: 0px;
-        left: -35px;
-    }
-    .GoodShowArticle {
-        height: 40px;
-        width: 90px;
-        line-height: 40px;
-        font-size: 10px;
-        text-align: center;
-        flex-wrap: wrap;
-    }
-    .addToCartGoodShow {
-        height: 35px;
-        width: 250px;
-        line-height: 35px;
-        font-size: 24px;
-        text-align: center;
-        color: orange;
-        cursor: pointer;
-        transition-property: all;
-        transition: 0.15s;
-        background-color: rgba(131, 125, 209, 0.5);
-        box-shadow: 3px 3px 8px black;
-        border: 1px solid black;
-    }
-    .addToCartGoodShow:active {
-        color: rgba(130, 125, 209);
-        background-color: orange;
-        box-shadow: 0px 0px 5px black;
-    }
-    .GoodShowMoreInfo {
-        width: 300px;
-        height: 120px;
-        display: flex;
-        border-left: 2px solid orange;
-        border-right: 2px solid orange;
-        border-right-style: double;
-        border-left-style: double;
-        box-shadow: 1px 1px 10px black;
-    }
-    .propertyMoreInfo {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-    }
-    .valueMoreInfo {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        align-items: flex-end;
-    }
-    .moreInfoAge, .moreInfoPlayers, .moreInfoTime, .valueAge, .valuePlayers, .valueTime {
-        width: 150px;
-        height: 30px;
-        line-height: 30px;
-        font-size: 10px;
-        justify-content: center;
-    }
-    .moreInfoAge, .moreInfoPlayers, .moreInfoTime {
-        padding-left: 10px;
-        color: orange;
-    }
-    .valueAge, .valuePlayers, .valueTime {
-        text-align: end;
-        padding-right: 10px;
-    }
-    .moreInfoPlayers, .valuePlayers {
-        background-color: rgb(236, 236, 236);
-    }
-    .GoodShowTags {
-        text-align: center;
-        font-size: 10px;
-        width: 300px;
-        height: 150px;
-        border: 2px solid orange;
-        border-style: dashed;
-        background-color: rgb(236, 236, 236);
-        box-shadow: 1px 1px 10px black;
-    }
-    .coloredSpan {
-        color: rgba(130, 125, 209);
-        font-size: 15px;
-    }
-    .recomended {
-        width: 290px;
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: white;
-        box-shadow: 1px 1px 10px black;
-        margin-top: 10px;
-        margin-left: 5px;
-        cursor: default;
-    }
-    .recomendedName {
-        margin-top: 10px;
-        height: 70px;
-        width: 230px;
-        line-height: 70px;
-        font-size: 24px;
-        text-align: center;
-    }
-    .recomendedContent {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: hidden;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        height: 350px;
-        width: 280px;
-        line-height: 35px;
-        font-size: 24px;
-        text-align: center;
-        border: 2px solid orange;
-        border-style: dashed;
-        background-color: rgb(236, 236, 236);
-        box-shadow: 1px 1px 10px black;
-    }
-    .GoodAdded {
-        position: absolute;
-        bottom: 50%;
-        width: 200px;
-        height: 75px;
-        font-size: 18px;
-        color: rgba(130, 125, 209);
-        text-align: center;
-        line-height: 75px;
-        background-color: rgba(125, 209, 167, 0.747);
-        border: 1px solid black;
-        transition-property: all;
-        transition: 0.3s;
-        border-top-left-radius: 99px;
-        border-bottom-left-radius: 99px;
-        box-shadow: 3px 3px 8px black;
-    }
-    .GoodShowDescription {
-        width: 1000px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-        box-shadow: 1px 1px 10px black;
-        margin-top: 10px;
-        cursor: default;
-    }
-    .GoodShowDescriptionName{
-        white-space: pre-wrap;
-        font-size: 32px;
-        padding: 20px;
-        margin: 20px;
-        text-align: left;
-        width: 900px;
-        margin-top: 10px;
-        cursor: default;
-        border-bottom: 2px solid orange;
-        border-bottom-style: dashed;
-        color: orange;
-    }
-    .GoodShowDescriptionContent {
-        white-space: pre-wrap;
-        font-size: 16px;
-        padding: 20px;
-        margin: 20px;
-        text-align: left;
-        width: 900px;
-        background-color: rgb(236, 236, 236);
-        box-shadow: 1px 1px 10px black;
-        margin-top: 10px;
-        cursor: default;
-        border: 2px solid orange;
-        border-style: dashed;
-    }
-
-    @media (max-width: 1023px) {
-        .contentAndRecomended {
-            width: 700px;
-            margin-top: 30px;
-        }
-        .GoodShowContent {
-            width: 100%;
-            min-height: 640px;
-            margin-top: 10px;
-            margin-right: 0;
-        }
-        .GoodShowInfo {
-            height: 390px;
-            width: 50%;
-            flex-direction: column;
-            align-items: center;
-        }
-        .GoodShowImageCont {
-            width: 50%;
-        }
-        .GoodShowName {
-            height: 70px;
-            width: 90%;
-        }
-        .priceButArtGoodShow {
-            height: 150px;
-            width: 90%;
-        }
-        .priceAndArtGoodShow {
-            height: 70px;
-            width: 90%;
-        }
-        .GoodShowDescription {
-            width: 700px;
-            margin-bottom: 30px;
-        }
-        .GoodShowDescriptionName{
-            width: 90%;
-        }
-        .GoodShowDescriptionContent {
-            width: 90%;
-        }
-    }   
-
-
-    @media (max-width: 320px) {
-        .fakeTableTop {
-            height: 60px;
-        }
-        .contentAndRecomended {
-            width: 100%;
-            margin-top: 0;
-        }
-        .GoodShowFile {
-            margin: 0;
-        }
-        .GoodShowContent {
-            width: 100%;
-            height: 100vh;
-            margin-top: 10px;
-            margin-right: 0;
-            flex-direction: column;
-        }
-        .GoodShowInfo {
-            width: 100%;
-            flex-direction: column;
-            align-items: center;
-        }
-        .GoodShowImageCont {
-            margin-top: 20px;
-            width: 300px;
-            height: 300px;
-        }
-        .GoodShowImage {
-            height: 250px;
-            width: 300px;
-        }
-        .GoodShowName {
-            height: 45px;
-            width: 90%;
-        }
-        .priceButArtGoodShow {
-            height: 150px;
-            width: 100%;
-            border-style: none;
-            box-shadow: none;
-        }
-        .GoodShowTags {
-            width: 100%;
-            border-style: none;
-            box-shadow: none;
-            background-color: rgb(236, 236, 236);
-        }
-        .priceAndArtGoodShow {
-            height: 70px;
-            width: 90%;
-        }
-        .GoodShowDescription {
-            width: 100%;
-            margin-bottom: 0px;
-            box-shadow: none;
-            background-color: white;
-        }
-        .GoodShowDescriptionName{
-            width: 90%;
-        }
-        .GoodShowDescriptionContent {
-            width: 90%;
-        }
-        .GoodShowMoreInfo {
-            width: 100%;
-            height: 120px;
-            display: flex;
-        }
-        .propertyMoreInfo {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            margin-left: 15px;
-        }
-        .valueMoreInfo {
-            display: flex;
-            flex-direction: column;
-            width: 50%;
-            align-items: flex-end;
-            margin-right: 15px;
-        }
-        .moreInfoAge, .moreInfoPlayers, .moreInfoTime, .valueAge, .valuePlayers, .valueTime {
-            height: 30px;
-            line-height: 30px;
-            font-size: 10px;
-        }
-    }
+<style lang="scss">
+    
 </style>

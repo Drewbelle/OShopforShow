@@ -1,0 +1,188 @@
+.CartItem{
+    margin: 20px 20px 0px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+    width: 210px;
+    border: 3px solid $main-color;
+    background-color: white;
+    position: relative;
+
+    @include smallmobile {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        height: 70px;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgb(236, 236, 236);
+        background-color: white;
+        position: relative;
+    }
+    .delGood{
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        text-shadow: 1px 1px 3px black;
+        color: white;
+        font-size: larger;
+        cursor: pointer;
+        border-radius: 99px;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        background-color: orange;
+
+        @include smallmobile {
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            text-shadow: 1px 1px 3px black;
+            color: white;
+            font-size: larger;
+            cursor: pointer;
+            border-radius: 99px;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            z-index: 13;
+            background-color: orange;
+        }
+        &:hover{
+            background-color: crimson;
+
+            @include smallmobile {
+                background: none;
+            }
+        }
+    }
+    .GoodsItemsImage {
+        display: block;
+        margin-top: 20px;
+        height: 180px;
+        width: 150px;
+        z-index: 12;
+
+        @include smallmobile {
+            width: 80px;
+            height: 60px;
+            margin-bottom: 5px;
+        }
+    }
+    .cartItemInfo{
+        width: 210px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        @include smallmobile {
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .cartItemName{
+            height: 35px;
+            line-height: 35px;
+            width: 210px;
+            text-align: center;
+            color: orange;
+
+            @include smallmobile {
+                height: 35px;
+                line-height: 35px;
+                width: 210px;
+                text-align: center;
+                color: orange;
+            }
+        }
+        .cartItemPrice{
+            height: 35px;
+            line-height: 35px;
+            width: 210px;
+            text-align: center;
+
+            @include smallmobile {
+                height: 35px;
+                line-height: 35px;
+                width: 210px;
+                text-align: center;
+            }
+        }
+    }
+    .yyGood{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include smallmobile {
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .summGood{
+            height: 70px;
+            width: 120px;
+            line-height: 70px;
+            font-size: 16px;
+            text-align: center;
+
+            @include smallmobile {
+                height: 35px;
+                width: 70px;
+                line-height: 35px;
+                font-size: 8px;
+                text-align: center;
+            }
+        }
+        .buttonsMoreLess{
+            width: 90px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            margin-bottom: 10px;
+
+            @include smallmobile {
+                width: 50px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 50px;
+                margin-bottom: 10px;
+            }
+            .btnInCartYv {
+                width: 50px;
+                height: 15px;
+                line-height: 15px;
+                font-size: 10px;
+                background-color: orange;
+
+                &:active {
+                    box-shadow: none;
+                    background-color: rgb(216, 146, 16);
+                }
+            }
+            .btnInCartYm {
+                width: 50px;
+                height: 15px;
+                line-height: 15px;
+                font-size: 10px;
+                background-color: orange;
+                margin-top: 5px;
+
+                &:active {
+                    box-shadow: none;
+                    background-color: rgb(216, 146, 16);
+                }
+            }
+        }
+    }
+}

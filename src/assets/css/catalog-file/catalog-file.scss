@@ -1,0 +1,161 @@
+@import 'goods-item-file';
+@import '@/assets/css/mixins/mixins.scss';
+.calatogFile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 30px;
+
+    @include smallmobile {
+        margin: 0;
+        background-color: white
+    }
+    .fakeTableTop {
+        @include faketabletop();
+        @include mobileTabletsmallNote {
+            height: 60px;
+        }
+    }
+    .searchInfo {
+        width: 600px;
+        height: 50px;
+        margin-top: 50px;
+        line-height: 50px;
+        text-align: center;
+        font-size: 20px;
+        background-color: $main-color;
+        border: 1px solid black;
+        box-shadow: 3px 3px 5px black;
+
+        @include smallmobile {
+            width: 100%;
+            height: 25px;
+            margin: 0;
+            line-height: 25px;
+            text-align: center;
+            font-size: 10px;
+            background-color: white;
+            border: 1px solid black;
+            box-shadow: 3px 3px 5px black;
+        }
+        .searchInfoColored {
+            height: 50px;
+            font-size: 20px;
+            line-height: 50px;
+            color: orange;
+
+            @include smallmobile {
+                height: 25px;
+                font-size: 10px;
+                line-height: 25px;
+                color: orange
+            }
+        }
+    }
+    .allGoodsCatalogBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 30px;
+        height: 100%;
+
+        @include smallmobile {
+            margin: 0;
+            background-color: white;
+        }
+        .catalogField{
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100%;
+            width: 600px;
+            justify-content: space-around;
+
+            @include smallmobile {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 1px;
+                min-height: 100%;
+                width: 100%;
+            }
+        }
+        .catalogFieldSlim{
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100%;
+            width: 450px;
+            justify-content: space-around;
+
+            @include smallmobile {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 1px;
+                min-height: 100%;
+                width: 100%;
+            }
+        }
+    }
+    .pagination {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 35px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+
+        .page {
+            box-shadow: 3px 3px 15px black;
+            background-color: $main-color;
+            border: 1px solid black;
+            padding: 8px;
+            transition-property: all;
+            transition: 1.5s;
+            margin: 0 5px 0 5px;
+
+            @include smallmobile {
+                box-shadow: none;
+                height: 30px;
+                line-height: 30px;
+                font-size: 10px;
+                display: flex;
+                align-items: center;
+                background-color: $main-color;
+                border: 1px solid black;
+                padding: 8px;
+                transition-property: all;
+                transition: 1.5s;
+                margin: 1px;
+            }
+
+            &:hover {
+                box-shadow: 3px 3px 15px orange;
+                border: 1px solid rgb(143, 93, 0);
+                background-color: orange;
+                cursor: pointer;
+            }
+        }
+        .pageSelected {
+            box-shadow: 3px 3px 15px orange;
+            border: 1px solid rgb(143, 93, 0);
+            background-color: orange;
+            cursor: pointer;
+        }
+    }
+    .r543{
+        border-radius: 99px;
+        border: 3px;
+        background-color: $main-color;
+        border-color: orange;
+        position: fixed;
+        bottom: calc(7vh - 25px);  
+        left: calc(95vw - 25px);
+        transition-property: all;
+        transition: 1s;
+        box-shadow: 3px 3px 15px black;
+    }
+}
+.fakeFooter {
+    height: 60px;
+    width: 100%;
+}

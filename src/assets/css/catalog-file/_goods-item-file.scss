@@ -1,0 +1,196 @@
+.GoodsItemsFile {
+    height: 250px;
+    width: 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background-color: white;
+    box-shadow: 1px 1px 10px black;
+    margin-top: 10px;
+    cursor: alias;
+    border-radius: 10px;
+
+    @include smallmobile {
+        height: 160px;
+        width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        background-color: white;
+        box-shadow: 1px 1px 10px black;
+        margin-top: 10px;
+        cursor: alias;
+        border-radius: 5px;
+    }
+    &::after {
+        content:"";
+        display:block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        height: 250px;
+        width: 190px;
+        background-color:white;
+        z-index:10;
+        transition-property: all;
+        transition: 0.2s;
+        border: 2px solid $main-color;
+        border-radius: 10px;
+
+        @include smallmobile {
+            display: none;
+        }
+    }
+    &:hover::after {
+        position: absolute;
+        top: -10px;
+        bottom: 0;
+        right: 0;
+        left: -10px;
+        height: 280px;
+        width: 210px;
+        z-index:11;
+        box-shadow: 1px 1px 10px orange;
+        border-radius: 5px;
+    }
+    .GoodsItemsImage {
+        display: block;
+        margin-top: 20px;
+        height: 180px;
+        width: 150px;
+        z-index: 12;
+
+        @include smallmobile {
+            display: block;
+            margin-top: 10px;
+            height: 100px;
+            width: 120px;
+            z-index: 12;
+        }
+    }
+    .GoodsItemsInfo {
+        height: 80px;
+        width: 190px;
+        z-index: 12;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        .GoodsItemsName {
+            height: 20px;
+            width: 190px;
+            line-height: 20px;
+            font-size: 10px;
+        }
+        .GoodsItemPrice {
+            height: 20px;
+            width: 190px;
+            color: orange;
+            line-height: 20px;
+        }
+        .GoodsItemPriceSales {
+            height: 20px;
+            width: 100px;
+            color: green;
+            position: relative;
+            line-height: 20px;
+
+            .sale {
+                width: 25px;
+                height: 25px;
+                background-image: url(@/assets/css/gameShopContent/sale.png);
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: rotate(-15deg);
+
+                @include smallmobile {
+                    width: 25px;
+                    height: 25px;
+                    top: 0;
+                    left: 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+        .showMoreBtn {
+            width: 75px;
+            height: 25px;
+            position: absolute;
+            right: 0;
+            bottom: 15px;
+            border-radius: 30px;
+        } 
+        .blockTimeAgePlayers {
+            width: 210px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: -15px;
+
+            .time {
+                width: 65px;
+                height: 25px;
+                line-height: 25px;
+                text-align: right;
+                background-image: url(@/assets/css/gameShopContent/time.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left;
+            }
+            .age {
+                width: 35px;
+                height: 25px;
+                line-height: 25px;
+                text-align: center;
+            }
+            .players {
+                width: 50px;
+                height: 25px;
+                line-height: 25px;
+                text-align: right;
+                background-image: url(@/assets/css/gameShopContent/players.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: left;
+            }
+        }
+    }
+    .Hits {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        color: green;
+        background-color: rgba(255, 166, 0, 0.493);
+        box-shadow: 0px 0px 10px orange;
+        border-radius: 99px;
+        position: absolute;
+        right: 0px;
+        top: 0;
+        z-index: 12;
+    }
+    .News {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        color: red;
+        background-color: rgba(255, 166, 0, 0.493);
+        box-shadow: 0px 0px 10px orange;
+        border-radius: 99px;
+        position: absolute;
+        right: 0px;
+        top: 40px;
+        z-index: 12;
+    }
+}

@@ -1,0 +1,123 @@
+@import '@/assets/css/mixins/mixins.scss';
+
+.catalogShowMore, .tableGamesShowMore, .warhammerShowMore, .manchikinShowMore, .paintsShowMore {
+    background-color: rgb(236, 236, 236);
+    width: 352px;
+    height: 472px;
+    position: absolute;
+    margin-left: 380px;
+    visibility: hidden;
+    margin-top: 30px;
+    border: 1px solid rgba(88, 88, 88, 0.473);
+    box-shadow: 3px 1px 10px 0 black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+
+    @include smallmobile {
+        display: none;
+    }
+}
+
+.catalogShowMoreMainLink {
+    display: flex;
+    min-width: 300px;
+    height: 150px;
+    margin: 10px 0px 10px 10px;
+    justify-content: space-between;
+
+    .catalogShowMoreNewsLink, .catalogShowMoreHitsLink {
+        width: 130px;
+        @include show-more-links();
+    }
+}
+.catalogShowMoreBottomPicture {
+    @include show-more-bottom-picture();
+    background-image: url(@/assets/css/gameShopContent/catalogback.jpg);
+}
+
+
+.tableGamesShowMoreMainLink {
+    display: flex;
+    min-width: 300px;
+    height: 150px;
+    margin: 10px 0px 10px 10px;
+    justify-content: space-between;
+
+    .tableGamesShowMoreGenresLink, .tableGamesShowMoreDifferentCompaniesLink {
+        width: 130px;
+        @include show-more-links();
+    }
+}
+.tableGamesShowMoreBottomPicture {
+    @include show-more-bottom-picture();
+    background-image: url(@/assets/css/gameShopContent/tablegamesback.jpg);
+}
+
+
+.warhammerShowMoreMainLink {
+    width: 300px;
+    margin: 10px 0px 10px 10px;
+    @include show-more-links();
+}
+.warhammerShowMoreBottomPicture {
+    @include show-more-bottom-picture();
+    background-image: url(@/assets/css/gameShopContent/warhammerback.jpeg);
+}
+
+
+.manchikinShowMoreMainLink {
+    width: 300px;
+    margin: 10px 0px 10px 10px;
+    @include show-more-links();
+}
+.manchikinShowMoreBottomPicture {
+    @include show-more-bottom-picture();
+    background-image: url(@/assets/css/gameShopContent/manchikinback.jpg);
+}
+
+
+.paintsShowMoreMainLink {
+    width: 300px;
+    margin: 10px 0px 10px 10px;
+    @include show-more-links();
+}
+.paintsShowMoreBottomPicture {
+    @include show-more-bottom-picture();
+    background-image: url(@/assets/css/gameShopContent/paintsback.jpg);
+}
+
+
+
+.linkCatalogNews, .linkCatalogHits {
+    margin-top: 15px;
+    list-style-type: none;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-decoration: none;
+    color: $main-color;
+}
+.linkTG, .linkCompTG {
+    margin-top: 5px;
+    list-style-type: none;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-decoration: none;
+    color: $main-color;
+}
+.linkSMPnt {
+    margin-top: 20px;
+    list-style-type: none;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    text-decoration: none;
+    color: $main-color;
+}
+.linkSMPnt:hover, .linkCatalogNews:hover, .linkCatalogHits:hover, .linkCompTG:hover, .linkTG:hover, .linkCatalog:hover, .linkNews:hover, .linkHits:hover, .linkSales:hover, .linkTableGames:hover, .linkPartyTableGames:hover, .linkCardsTablesGames:hover, .linkClassicTablesGames:hover, .linkCoopTableGames:hover, .linkRolePlayTableGames:hover, .linkDetectiveTableGames:hover, .linkWarhammer:hover, .linkManchikin:hover, .linkPaints:hover, .linkLayer:hover, .linkContrast:hover, .linkBase:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

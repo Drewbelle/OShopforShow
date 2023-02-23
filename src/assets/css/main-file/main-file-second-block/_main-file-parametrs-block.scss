@@ -1,0 +1,40 @@
+@import 'main-file-parametrs-block-sliders';
+@import 'main-file-parametrs-block-check-boxes';
+
+.parametrsBlock {
+    width: 652px;
+    height: 472px;
+    margin: 30px 30px 30px 15px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(88, 88, 88, 0.473);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include smallmobile {
+        display: none;
+    }
+    @include notebook {
+        margin-left: 0;   
+        margin-right: 0;   
+    }
+    .searchBySliders {
+        width: 600px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .searchByCheckBoxes {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        width: 600px;
+        height: 340px;
+        background-color: white;
+    }
+}

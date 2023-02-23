@@ -1,0 +1,122 @@
+.FooterFile {
+    height: 150px;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-top: 3px solid orange;
+
+    @include mobileTabletsmallNote {
+        height: 60px;
+        background-color: white;
+        position: fixed;
+        bottom: 0;
+        z-index: 12;
+    }
+
+    .bigFooterContent {
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .logoContainer {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            .footerImage {
+                width: 80px;
+                height: 80px;
+                background-image: url(@/assets/css/gameShopContent/joystick.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .footerShopName {
+                width: 200px;
+                height: 80px;
+                line-height: 80px;
+                font-size: 48px;
+                color: $main-color;
+                letter-spacing: -10px;
+            }
+        }
+        .footerInfo {
+            height: 50px;
+            line-height: 50px;
+            font-size: 16px;
+            color: $main-color;
+        }
+    }
+    .footerContent {
+        display: flex;
+        width: 80%;
+        justify-content: space-around;
+
+        .footerContentCart {
+            @include mobileTabletsmallNote {
+                width: 15px;
+                height: 15px;
+                line-height: 15px;
+                right: 0;
+                bottom: 0;
+                color: red;
+            }
+        }
+        .footerContentCatalog, .footerContentCart, .footerContentLogin {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .footerContentCatalogImage {
+                width: 30px;
+                height: 30px;
+                background-image: url(@/assets/css/gameShopContent/catalog.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            .footerContentCartImage {
+                width: 30px;
+                height: 30px;
+                background-image: url(@/assets/css/gameShopContent/cart1.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                position: relative;
+
+                .cartValue {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 15px;
+                    height: 15px;
+                    line-height: 15px;
+                    font-size: 10px;
+                    text-align: center;
+                    border-radius: 99px;
+                    background-color: orange;
+                    color: black;
+                }
+            }
+            .footerContentLoginImage {
+                width: 30px;
+                height: 30px;
+                background-image: url(@/assets/css/gameShopContent/profile.png);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+            }
+            .footerContentName {
+                display: block;
+                width: 50px;
+                height: 20px;
+                text-align: center;
+            }
+        }
+    }
+}
