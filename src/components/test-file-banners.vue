@@ -55,7 +55,8 @@
         border-radius: 5px;
         box-shadow: 1px 1px 4px black;
         padding: 10px;
-        font-size: 16px;
+        font-size: 12px;
+        max-width: 1000px;
         max-height: 250px;
     }
 </style>
