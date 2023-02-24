@@ -4,7 +4,8 @@ import MainFile from '@/components/main-file.vue';
 import CatalogFile from '@/components/catalog-file.vue';
 import GoodShowFile from '@/components/good-show-file.vue';
 import CartFile from '@/components/cart-file.vue';
-import AdminPannelFile from '@/components/admin-pannel-file.vue'
+import AdminPannelFile from '@/components/admin-pannel-file.vue';
+import TestFile from '@/components/test-file.vue';
 
 
 
@@ -37,6 +38,12 @@ const routes = [
         path: '/Admin', 
         component: AdminPannelFile, 
         name: 'adminpage', 
+        props: true
+    },
+    {
+        path: '/Test', 
+        component: TestFile, 
+        name: 'testpage', 
         props: true
     }
 ]

@@ -145,7 +145,7 @@
                 this.$router.push({name: 'goodpage', query: {'Good': Good.id}})
             },
             r543() {
-                console.log(this.GETSEARCHVALUE)
+                this.$router.push({name: 'testpage'})
             },
         },
         mounted() {
