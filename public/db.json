@@ -1,4 +1,71 @@
 {
+  "TestBanners" : [
+    {
+      "url": "Agricola_banner.jpg",
+      "testbannerid": 1
+    },
+    {
+      "url": "Bitoku_banner.jpg",
+      "testbannerid": 2
+    },
+    {
+      "url": "Dedukcio_banner.jpg",
+      "testbannerid": 3
+    },
+    {
+      "url": "ENCYCLOPEDIA_banner.jpg",
+      "testbannerid": 4
+    },
+    {
+      "url": "Everdell_Pearlbrook_banner.jpg",
+      "testbannerid": 5
+    },
+    {
+      "url": "Everdell_Spirecrest_banner.jpg",
+      "testbannerid": 6
+    },
+    {
+      "url": "FalloutShelter_banner.jpg",
+      "testbannerid": 7
+    },
+    {
+      "url": "Golosa_banner.jpg",
+      "testbannerid": 8
+    },
+    {
+      "url": "Libertation_banner.jpg",
+      "testbannerid": 9
+    },
+    {
+      "url": "LOTR_banner.jpg",
+      "testbannerid": 10
+    },
+    {
+      "url": "Mans_Hope_banner.jpg",
+      "testbannerid": 11
+    },
+    {
+      "url": "Path_Finder_banner.jpg",
+      "testbannerid": 12
+    },
+    {
+      "url": "Scarlet_Keys_banner.jpg",
+      "testbannerid": 13
+    },
+    {
+      "url": "Smert_na_balu_banner.jpg",
+      "testbannerid": 14
+    },
+    {
+      "url": "The_Gardens_banner.jpg",
+      "testbannerid": 15
+    },
+    {
+      "url": "Zames_banner.jpg",
+      "testbannerid": 16
+    }
+    
+  ],
   "Banners": [
     {
       "url": "Agricola_banner.jpg",

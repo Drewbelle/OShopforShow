@@ -14,6 +14,7 @@ export let store = new Vuex.Store({
         searchGoods: [],
         goods: [],
         banners: [],
+        tbanners: [],
         cart: [],
         addedGood: {}
     },
@@ -156,6 +157,9 @@ export let store = new Vuex.Store({
         SETBANNERSTOSTATE: (state, Banners) => {
             state.banners = Banners
         },
+        SETTESTBANNERSTOSTATE: (state, testBanners) => {
+            state.tbanners = testBanners
+        },
         SETGOODSTOGOODS: (state, Goods)=> {
             Goods.forEach(element => {
                 if ( Object.keys(element).includes("sales")) {
@@ -253,6 +257,16 @@ export let store = new Vuex.Store({
         GETSEARCHVALUETOVUEX({commit}, value) {
             commit('SETSEARCHVALUETOSTATE', value)
         },
+        GETTESTBANNERSFROMAPI({commit}) {
+            return axios('https://o-shopfor-show.vercel.app/db.json',{
+                method: "GET"
+            })
+                .then((resTestBanners) =>{
+                    commit('SETTESTBANNERSTOSTATE', resTestBanners.data.TestBanners)
+                    return resTestBanners
+                })
+                .catch(console.log('error'))
+        },
         GETBANNERSFROMAPI({commit}) {
             return axios('https://o-shopfor-show.vercel.app/db.json',{
                 method: "GET"
@@ -304,6 +318,9 @@ export let store = new Vuex.Store({
         },
         GETBANNERS(state){
             return state.banners
+        },
+        GETTESTBANNERS(state){
+            return state.tbanners
         },
         GETTABLEGAMES(state){
             return state.tablegames

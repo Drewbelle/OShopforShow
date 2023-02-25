@@ -1,5 +1,7 @@
 <template>
     <div data-aos="fade" class="testFile">
+        <div class="testFileBG"></div>
+        <TestFileAnimatedBackground/>
         <TestFileBanners
             v-for="Banner in GETBANNERS"
             v-bind:key="Banner.bannerid"
@@ -11,10 +13,12 @@
 
 <script>
     import TestFileBanners from '@/components/test-file-banners.vue'
+    import TestFileAnimatedBackground from '@/components/test-file-animated-background.vue'
     import { mapGetters, mapActions } from 'vuex';
     export default {
         components: {
             TestFileBanners,
+            TestFileAnimatedBackground
         },
         computed: {
             ...mapGetters([ 'GETBANNERS' ])
@@ -52,13 +56,27 @@
     .testFile {
         width: 100%;
         height: 100%;
+        display: flex;
         background: url(@/assets/css/gameShopContent/bgtest.jpg);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        display: flex;
         flex-direction: column;
         align-items: center;
         position: relative;
+        overflow: hidden;
+
+        &BG {
+            width: 100%;
+            height: 100%;
+            background: url(@/assets/css/gameShopContent/bgtest.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(3px);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     }
 </style>
