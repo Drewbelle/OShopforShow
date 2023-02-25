@@ -1,7 +1,28 @@
 <template>
     <div data-aos="fade" class="testFile">
-        <div class="testFileBG"></div>
-        <TestFileAnimatedBackground/>
+        <div class="testFileBG">
+            <TestFileAnimatedBackgroundAnimBlock
+                v-for="testBanner in GETTESTBANNERS"
+                v-bind:key="testBanner.testbannerid"
+                v-bind:testbannersbg_data="testBanner"
+                v-bind:variable="2"
+                v-bind:style="{transform: 'translateY(' + this.positionY + 'px)'}"
+            />
+            <TestFileAnimatedBackgroundAnimBlock
+                v-for="testBanner in GETTESTBANNERS"
+                v-bind:key="testBanner.testbannerid"
+                v-bind:testbannersbg_data="testBanner"
+                v-bind:variable="2"
+                v-bind:style="{transform: 'translateY(' + this.positionY + 'px)'}"
+            />
+            <TestFileAnimatedBackgroundAnimBlock
+                v-for="testBanner in GETTESTBANNERS"
+                v-bind:key="testBanner.testbannerid"
+                v-bind:testbannersbg_data="testBanner"
+                v-bind:variable="2"
+                v-bind:style="{transform: 'translateY(' + this.positionY + 'px)'}"
+            />
+        </div>
         <TestFileBanners
             v-for="Banner in GETBANNERS"
             v-bind:key="Banner.bannerid"
@@ -13,21 +34,31 @@
 
 <script>
     import TestFileBanners from '@/components/test-file-banners.vue'
-    import TestFileAnimatedBackground from '@/components/test-file-animated-background.vue'
+    import TestFileAnimatedBackgroundAnimBlock from '@/components/test-file-animated-background-anim-block.vue'
     import { mapGetters, mapActions } from 'vuex';
     export default {
         components: {
             TestFileBanners,
-            TestFileAnimatedBackground
+            TestFileAnimatedBackgroundAnimBlock
+        },
+        data() {
+            return {
+                positionY: 0
+            }
         },
         computed: {
-            ...mapGetters([ 'GETBANNERS' ])
+            ...mapGetters([ 'GETBANNERS', 'GETTESTBANNERS' ])
         },
         methods: {
-            ...mapActions([ 'GETBANNERSFROMAPI' ])
+            ...mapActions([ 'GETBANNERSFROMAPI', 'GETTESTBANNERSFROMAPI' ]),        
+            changePositionBG() {
+                let yPage = window.scrollY
+                this.positionY = -yPage/4
+            }
         },
         mounted() {
-            this.GETBANNERSFROMAPI()
+            this.GETBANNERSFROMAPI(), this.GETTESTBANNERSFROMAPI(), window.onscroll = this.changePositionBG
+
         }
     }
 </script>
@@ -73,10 +104,11 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            filter: blur(3px);
             position: absolute;
             top: 0;
             left: 0;
+            display: flex;
+            flex-wrap: wrap;
         }
     }
 </style>
