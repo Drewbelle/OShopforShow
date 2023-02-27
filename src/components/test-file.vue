@@ -37,7 +37,7 @@
             </div>
             <div class="testFileGoToShopContent">
                 <div data-aos="zoom-in" data-aos-delay="600" class="testFileGoToShopContentPhrase">Now you can move to</div>
-                <div data-aos="zoom-in" data-aos-delay="600" class="testFileGoToShopContentLinkToShop" @click="toShop">To shop</div>
+                <div data-aos="zoom-in" data-aos-delay="600" class="testFileGoToShopContentLinkToShop" @click="toShop">Shop</div>
             </div>
         </div>
     </div>
