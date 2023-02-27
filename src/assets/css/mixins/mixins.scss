@@ -4,7 +4,7 @@ $desktop: 1000px;
 $xxs-desktop: 1024px;
 $xs-desktop: 1200px;
 $sm-desktop: 1280px;
-$m-desktop: 1455px;
+$m-desktop: 1440px;
 $xl-desktop: 1600px;
 $xl-mobile: 479px;
 $xs-mobile: 374px;
@@ -102,7 +102,6 @@ $xxs-mobile: 320px;
 //fake tabletop//
 @mixin faketabletop() {
     width: 100vw;
-    height: 80px;
+    height: 60px;
     background-color: black;
 }
-

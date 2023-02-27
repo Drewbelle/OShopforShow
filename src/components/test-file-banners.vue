@@ -53,9 +53,9 @@
         transition: 1s !important;
 
         &:hover {
-            box-shadow: 1px 1px 30px black;
+            box-shadow: 1px 1px 30px gold;
             transform: rotateX(2deg) rotateY(25deg) rotateZ(2deg) !important;
-            opacity: .8 !important;
+            opacity: .85 !important;
         }
     }
     .TestFileBannersInfo {

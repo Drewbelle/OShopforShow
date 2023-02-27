@@ -338,7 +338,7 @@
     }
     .fakeTableTop {
     width: 100vw;
-    height: 80px;
+    height: 60px;
     background-color: black;
     }   
     .addedNewGoodBG {

@@ -1,7 +1,7 @@
 @import '@/assets/css/mixins/mixins.scss';
 .courusel {
     width: 100vw;
-    height: 400px;
+    height: 380px;
     display: flex;
     align-items: center;
     text-align: center;
@@ -11,6 +11,9 @@
     @include smallmobile {
         width: 320px;
         height: 150px;
+    }
+    @include tablet {
+        width: 100%;
     }
     @include tabletsmallNote {
         width: 100vw;

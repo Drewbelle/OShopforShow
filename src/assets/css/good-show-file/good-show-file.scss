@@ -13,6 +13,9 @@
     @include smallmobile {
         margin: 0;
     }
+    @include tablet {
+        margin: 0;
+    }
     .fakeTableTop {
         @include faketabletop();
         @include mobileTabletsmallNote {
@@ -39,6 +42,12 @@
                 width: 100%;
                 flex-direction: column;
             }
+            @include tablet {
+                margin: 0;
+                height: 100%;
+                width: 100%;
+                flex-direction: column;
+            }
             .GoodShowImageCont {
                 display: flex;
                 align-items: center;
@@ -47,6 +56,9 @@
                 width: 340px;
 
                 @include smallmobile {
+                    width: 100%;
+                }
+                @include tablet {
                     width: 100%;
                 }
                 .GoodShowImage {
@@ -61,8 +73,12 @@
                 flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
+                border-left: 2px solid #2a2d30;
 
                 @include smallmobile {
+                    width: 100%;
+                }
+                @include tablet {
                     width: 100%;
                 }
                 .GoodShowName {
@@ -75,16 +91,18 @@
                 .priceButArtGoodShow {
                     height: 150px;
                     width: 300px;
-                    border: 2px solid orange;
-                    border-style: dashed;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     justify-content: center;
                     background-color: rgb(236, 236, 236);
-                    box-shadow: 1px 1px 10px black;
 
                     @include smallmobile {
+                        width: 100vw;
+                        box-shadow: none;
+                        border: none;
+                    }
+                    @include tablet {
                         width: 100vw;
                         box-shadow: none;
                         border: none;
@@ -134,7 +152,7 @@
                     }
                     .addToCartGoodShow {
                         height: 25px;
-                        width: 150px;
+                        width: 90%;
                         line-height: 25px;
                         font-size: 10px;
                         text-align: center;
@@ -144,13 +162,11 @@
                         transition: 0.15s;
                         background-color: rgba(175, 247, 235, 0.5);
                         box-shadow: 3px 3px 8px black;
-                        border-radius: 30px;
                         border: 1px solid black;
                     
                         &:active {
-                            color: $main-color;
-                            background-color: orange;
-                            box-shadow: 0px 0px 5px black;
+                            background-color: rgba(175, 247, 235, 0.74);
+                            box-shadow: none;
                         }
                     }
                 }
@@ -158,13 +174,13 @@
                     width: 300px;
                     height: 120px;
                     display: flex;
-                    border-left: 2px solid orange;
-                    border-right: 2px solid orange;
-                    border-right-style: double;
-                    border-left-style: double;
-                    box-shadow: 1px 1px 10px black;
 
                     @include smallmobile {
+                        width: 100vw;
+                        box-shadow: none;
+                        border: none;
+                    }
+                    @include tablet {
                         width: 100vw;
                         box-shadow: none;
                         border: none;
@@ -216,18 +232,20 @@
                     font-size: 10px;
                     width: 300px;
                     height: 150px;
-                    border: 2px solid orange;
-                    border-style: dashed;
                     background-color: rgb(236, 236, 236);
-                    box-shadow: 1px 1px 10px black;
 
                     @include smallmobile {
                         width: 100vw;
                         box-shadow: none;
                         border: none;
                     }
+                    @include tablet {
+                        width: 100vw;
+                        box-shadow: none;
+                        border: none;
+                    }
                     .coloredSpan {
-                        color: $main-color;
+                        color: orange;
                         font-size: 15px;
                     }
                 }
@@ -265,10 +283,7 @@
                 line-height: 35px;
                 font-size: 24px;
                 text-align: center;
-                border: 2px solid orange;
-                border-style: dashed;
-                background-color: rgb(236, 236, 236);
-                box-shadow: 1px 1px 10px black;
+                background-color: white;
             }
         }
     }
@@ -287,6 +302,10 @@
             width: 100%;
             margin: 0;
         }
+        @include tablet {
+            width: 100%;
+            margin: 0;
+        }
         @include smallNote {
             width: 700px;
         }
@@ -300,11 +319,14 @@
             width: 900px;
             margin-top: 10px;
             cursor: default;
-            border-bottom: 2px solid orange;
-            border-bottom-style: dashed;
+            border-bottom: 2px solid #2a2d30;
             color: orange;
 
             @include smallmobile {
+                width: 100%;
+                border: none;
+            }
+            @include tablet {
                 width: 100%;
                 border: none;
             }
@@ -323,10 +345,14 @@
             box-shadow: 1px 1px 10px black;
             margin-top: 10px;
             cursor: default;
-            border: 2px solid orange;
-            border-style: dashed;
 
             @include smallmobile {
+                width: 100%;
+                border: none;
+                box-shadow: none;
+                background-color: white;
+            }
+            @include tablet {
                 width: 100%;
                 border: none;
                 box-shadow: none;
@@ -338,20 +364,20 @@
         }
     }
     .GoodAdded {
-        position: absolute;
-        bottom: 50%;
+        z-index: 100;
+        position: fixed;
+        right: 2%;
+        bottom: 2%;
         width: 200px;
         height: 75px;
         font-size: 18px;
-        color: $main-color;
+        color: rgb(79, 133, 106);
+        background-color: rgba(125, 209, 167, 0.747);
         text-align: center;
         line-height: 75px;
-        background-color: rgba(125, 209, 167, 0.747);
         border: 1px solid black;
         transition-property: all;
         transition: 0.3s;
-        border-top-left-radius: 99px;
-        border-bottom-left-radius: 99px;
         box-shadow: 3px 3px 8px black;
     }
 }

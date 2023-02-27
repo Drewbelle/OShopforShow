@@ -6,7 +6,7 @@
           <div class="userRegionPict"></div>
           <span class="userCountry">{{ this.country }}</span>
         </div>
-        <router-link to="/" class="logoName">
+        <router-link to="/Main" class="logoName">
           <div class="mainlink"></div>
           <div class="namesite">Game Shop</div>
         </router-link>
@@ -18,30 +18,31 @@
           <div class="goSearch" @click="searchGood(searchValue)"></div>
         </div>
         <div class="buttonsInTopDeck">
-          <router-link to="/Admin" class="butTD ButtonFile butCart">Admin
-          </router-link>
-          <router-link to="/Cart" class="butTD ButtonFile butCart">Cart
-            <div class="cartValue">{{ this.GETCART.length }}</div>
-          </router-link>
-          <ButtonFile class="butTD butLogin">Login</ButtonFile>
-        </div>
-      </div>
-    </div>
-    <div class="botColorLine">
-      <div class="burgerMenu" v-bind:class="{'openSelectedCategoriesStyle': openedSelectedCategories}">
-        <div class="selectCategories" 
-          @click="this.openedSelectedCategories = !this.openedSelectedCategories" 
-          @mouseleave="this.openedSelectedCategories = false" 
+          <ButtonFile class="butTD ButtonFile butCart">
+            <router-link to="/Admin" class="butTDText">Admin</router-link>
+          </ButtonFile>
+          <ButtonFile class="butTD ButtonFile butCart">
+            <router-link to="/Cart" class="butTDText">Cart
+              <div class="cartValue">{{ this.GETCART.length }}</div>
+            </router-link>
+          </ButtonFile>
+          <ButtonFile class="butTD ButtonFile butCart">Login</ButtonFile>
+          <ButtonFile class="butTD ButtonFile butCart" v-bind:class="{'openSelectedCategoriesStyle': this.openedSelectedCategories}"
+            @click="this.openedSelectedCategories = !this.openedSelectedCategories"
+            @mouseleave="this.openedSelectedCategories = false" 
           >
-          All Categories
-          <selectFile
-            v-for="selectItem in selectList"
-            v-bind:key="selectItem.selectedId"
-            v-bind:selectItem_data="selectItem"
-            v-bind:name="selectItem.name"
-            v-on:goToCatalogAndSearchSelectedItem="goToCatalogAndSearchSelectedItem"
-            >
-          </selectFile>
+            Categories
+            <div class="selectCategories">
+              <selectFile
+                v-for="selectItem in selectList"
+                v-bind:key="selectItem.selectedId"
+                v-bind:selectItem_data="selectItem"
+                v-bind:name="selectItem.name"
+                v-on:goToCatalogAndSearchSelectedItem="goToCatalogAndSearchSelectedItem"
+                >
+              </selectFile>
+            </div>
+          </ButtonFile>
         </div>
       </div>
     </div>
@@ -53,7 +54,7 @@
           <div class="userRegionPict"></div>
           <span class="userCountry">{{ this.country }}</span>
         </div>
-        <router-link to="/" class="logoName">
+        <router-link to="/Main" class="logoName">
           <div class="mainlink"></div>
           <div class="namesite">Game Shop</div>
         </router-link>
@@ -91,11 +92,11 @@ export default {
             searchValue: '',
             selectList: [
                 {name: 'All Goods', selectedId: 0},
-                {name: 'Party Games', selectedId: 1},
-                {name: 'Card Games', selectedId: 2},
-                {name: 'Classic Games', selectedId: 3},
-                {name: 'Cooperative Games', selectedId: 4},
-                {name: 'Role Play Games', selectedId: 5},
+                {name: 'Party', selectedId: 1},
+                {name: 'Card', selectedId: 2},
+                {name: 'Classic', selectedId: 3},
+                {name: 'Cooperative', selectedId: 4},
+                {name: 'Role Play', selectedId: 5},
                 {name: 'Detective', selectedId: 6},
                 {name: 'Warhammer', selectedId: 7},
                 {name: 'Manchikin', selectedId: 8},

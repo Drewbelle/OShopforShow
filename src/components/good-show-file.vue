@@ -88,7 +88,9 @@
                 newGood: {},
                 IntervalGoodSlide: null,
                 GoodAddedSlide: {
-                    right: '-200px'
+                    transitionProperty: 'all',
+                    transition: '0.7s',
+                    opacity: 0
                 }
             }
         },
@@ -98,19 +100,19 @@
             ]),
             addToCartRandGood(randRecomendedGood) {
                 this.ADDTOCART(randRecomendedGood)
-                this.GoodAddedSlide.right = '-10px'
+                this.GoodAddedSlide.opacity = 1
                 this.slideGood()
             },
             addToCart() {
                 this.ADDTOCART(this.findGood)
-                this.GoodAddedSlide.right = '-10px'
+                this.GoodAddedSlide.opacity = 1
                 this.slideGood()
             },
             slideGood() {
                 this.IntervalGoodSlide = setTimeout(this.closeSlideGood, 1500)
             },
             closeSlideGood() {
-                this.GoodAddedSlide.right = '-200px'
+                this.GoodAddedSlide.opacity = 0
             }
         },
         computed: {

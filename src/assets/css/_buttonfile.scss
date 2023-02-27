@@ -1,31 +1,25 @@
 .ButtonFile {
     position: relative;
-    background-color: whitesmoke;
-    color: rgb(0, 0, 0);
+    background: none;
+    color: white;
     width: 75px;
     height: 25px;
     line-height: 25px;
     font-size: 10px;
-    border: 0px;
     text-align: center;
     transition-property: all;
-    transition: 1s;
+    transition: 0.5s;
     text-decoration: none;
     cursor: pointer;
-    box-shadow: 1px 1px 3px 0 black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-top-style: none;
+    border-bottom-style: none;
 
     &:hover {
-        background-color: $main-color;
-        box-shadow: 0px 0px 5px 0 black;
-        color: black
+        color: gold
     }
 }
-
-// @media (max-width: 1439px) {
-// .ButtonFile{
-//     width: 50px;
-//     height: 16px;
-//     line-height: 16px;
-//     font-size: 8px;
-// }
-// }

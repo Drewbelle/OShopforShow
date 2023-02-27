@@ -11,7 +11,7 @@ import TestFile from '@/components/test-file.vue';
 
 const routes = [
     {
-        path: '/',
+        path: '/Main',
         component: MainFile,
         name: 'mainpage',
         props: true
@@ -41,7 +41,7 @@ const routes = [
         props: true
     },
     {
-        path: '/Test', 
+        path: '/', 
         component: TestFile, 
         name: 'testpage', 
         props: true

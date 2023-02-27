@@ -2,7 +2,7 @@
     <TabletopFile />
     <div class="CartFile">
         <div class="fakeTableTop"></div>
-        <div class="emptyCart" v-if="this.GETCART.length === 0">Your cid is empty</div>
+        <div class="emptyCart" v-if="this.GETCART.length === 0">Your cart is empty</div>
         <div class="ItemsInCart">
             <CartItem 
             v-for="(Good, index) in GETCART"
@@ -13,7 +13,7 @@
             @lessGood="lessGood(index)"
             />
         </div>
-        <div class="allSumm">Total: {{ this.calculateTotalPrice }}</div>
+        <div class="allSumm">Total: {{ this.calculateTotalPrice }} ₽</div>
     </div>
     <div class="fakeFooter" v-if="windowW <= 768"></div>
     <FooterFile/>

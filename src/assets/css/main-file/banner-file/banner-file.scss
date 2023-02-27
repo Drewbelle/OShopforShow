@@ -4,6 +4,8 @@
     height: 340px;
     margin: 0 10px 0 10px;
     box-shadow: 2px 2px 3px black;
+    transition-property: all;
+    transition: 0.3s;
 
     @include smallmobile {
         height: 120px;
@@ -18,16 +20,13 @@
         box-shadow: 1px 1px 3px black;
     }
     @include notebook {
-        max-width: 320px;
+        max-width: 325px;
         height: 180px;
-    }
-    @include withoutforK {
-        max-width: 492px;
     }
 
 
     &:hover {
-        opacity: 0.9;
+        opacity: 0.8;
         box-shadow: 0px 0px 0px black;
 
         @include tabletsmallNote {
@@ -48,7 +47,7 @@
             height: 170px;
         }
         @include notebook {
-            max-width: 320px;
+            max-width: 325px;
             height: 180px;
         }
         @include withoutforK {

@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     width: 100vw;
-    height: 80px; 
+    height: 60px; 
     position: fixed;
     top: 0;
     z-index: 100;
@@ -12,7 +12,10 @@
     @include smallmobile {
         height: 40px;
     }
-    @include mobileTabletsmallNote {
+    @include tablet {
+        width: 100%;
+    }
+    @include smallNote {
         height: 60px;
     }
 
@@ -21,7 +24,7 @@
         width: 100%;
         height: 60px;
         position: relative;
-        background-color: white;
+        background-color: #5c6064;
         flex-direction: column;
         align-items: center;
 
@@ -66,27 +69,6 @@
                     bottom: 25%;
                     left: -100px;
                 }
-                .userRegionPict {
-                  height: 24px;
-                  width: 24px;
-                  background-image: url(@/assets/css/gameShopContent/geo.png);
-                  background-repeat: no-repeat;
-                  background-size: contain;
-
-                  @include smallmobile {
-                    background: none;
-                    width: 0;
-                    height: 0;
-                  }
-                  @include mobileTabletsmallNote {
-                    height: 12px;
-                    width: 12px;
-                  }
-                  @include notebook {
-                    height: 12px;
-                    width: 12px;
-                  }
-                }
                 .userCountry {
                   height: 24px;
                   line-height: 24px;
@@ -120,7 +102,12 @@
                     background-repeat: no-repeat;
                     width: 50px;
                     height: 50px;
+                    transition-property: all;
+                    transition: 0.7s;
 
+                    &:hover {
+                        rotate: 359deg;
+                    }
                     @include smallmobile {
                         width: 25px;
                         height: 25px;
@@ -129,12 +116,19 @@
                 .namesite {
                     width: 50px;
                     height: 50px;
+                    margin-left: 5px;
                     line-height: 25px;
                     font-size: 18px;
                     font-style: normal;
                     color: $main-color;
                     letter-spacing: -3px;
+                    transition-property: all;
+                    transition: 0.7s;
+                    text-shadow: 3px 3px 1px #2a2d30;
                     
+                    &:hover {
+                        letter-spacing: 5px;
+                    }
                     @include smallmobile {
                         width: 25px;
                         height: 25px;
@@ -167,13 +161,11 @@
                     width: 450px;
                     line-height: 35px;
                     font-size: 14px;
-                    border-top-left-radius: 10px;
-                    border-bottom-left-radius: 10px;
                     border: 1px solid black;
                     padding-left: 10px;
-                    background-color: wheat;
+                    background-color: white;
                     outline: none;
-                    
+                    box-shadow: 3px 3px 1px #2a2d30;
 
                     @include mobileTabletsmallNote {
                         width: 280px;
@@ -188,47 +180,28 @@
                     @include notebook {
                         width: 250px;
                     }
-                    &:hover {
-                        background-color: rgb(248, 210, 139);
 
-                        @include smallmobile {
-                            background: none;
-                        }
-                    }
                 }
                 .goSearch {
-                    height: 35px;
+                    height: 30px;
                     width: 30px;
                     background: url(@/assets/css/gameShopContent/search.png);
                     background-repeat: no-repeat;
                     background-size: 25px 25px;
                     background-position: center;
                     position: absolute;
-                    right: 5px;
+                    right: 40px;
                     cursor: pointer;
-                    border-top-right-radius: 10px;
-                    border-bottom-right-radius: 10px;
-                    border: 1px solid black;
-                    border-left: 0px;
-                    background-color: wheat;
                 
-                    @include smallmobile {
-                        width: 20px;
-                        height: 20px;
-                        background-size: 10px 10px;
-                        background-color: white;
-                    }
                     @include mobileTabletsmallNote {
                         width: 20px;
                         height: 20px;
+                        right: 20px;
                         background-size: 10px 10px;
                     }
                     @include notebook {
                         height: 35px;
                         width: 30px;
-                    }
-                    &:hover {
-                        background-color: rgb(248, 210, 139);
                     }
                 }
             }
@@ -236,65 +209,59 @@
                 display: flex;
             
                 .butTD{
-                    margin: 0px 15px 0px 15px;
+                    margin: 0px 10px 0px 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    overflow: hidden;
 
                     @include notebook {
                         margin: 0px 5px 0px 5px;
                     }
+                    .butTDText{
+                        text-align: center;
+                        color: white;
+                        height: 25px;
+                        line-height: 25px;
+
+                        &:hover{
+                            color: gold;
+                        }
+                    }
                     .cartValue{
                         position: absolute;
-                        right: 2.5px;
-                        bottom: 2.5px;
+                        right: -25px;
+                        bottom: 3px;
                         height: 20px;
                         width: 20px;
                         line-height: 20px;
                         text-align: center;
                         border-radius: 99px;
-                        background-color: orange;
+                        background-color: rgba(255, 166, 0, 0.5);
 
                         @include notebook {
                             height: 10px;
                             width: 10px;
                             line-height: 10px;
                         }
-                      }
+                    }
+                    .selectCategories {
+                        width: 100%;
+                        line-height: 20px;
+                        text-align: center;
+                        cursor: pointer;
+                        align-self: flex-start;
+                        background-color: #5c6064;
+                        
+                        @include notebook {
+                            width: 150px;
+                        }
+                    }
+                }
+                .openSelectedCategoriesStyle {
+                    overflow: visible;
                 }
             }
-        }
-    }
-    .botColorLine {
-        display: flex;
-        width: 100%;
-        height: 20px;
-        background-color: $main-color;
-        flex-direction: column;
-        align-items: center;
-        border-top: 3px solid orange;
-
-        .burgerMenu {
-            width: 60%;
-            height: 20px;
-            display: flex;
-            position: relative;
-            overflow: hidden;
-
-            .selectCategories {
-                height: 220px;
-                width: 10%;
-                line-height: 20px;
-                text-align: center;
-                cursor: pointer;
-                
-                @include notebook {
-                    width: 150px;
-                }
-                &:hover {
-                    background-color: rgba(255, 166, 0, 0.808);
-                }
-            }
-        }
-        .openSelectedCategoriesStyle {
-            overflow: visible;
         }
     }
 }

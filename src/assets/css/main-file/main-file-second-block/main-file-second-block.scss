@@ -7,7 +7,6 @@
     height: 534px;
     margin-top: 30px;
     margin-bottom: 30px;
-    background-color: rgba(255, 166, 0, 0.493);
     display: flex;
 
     @include smallmobile {
@@ -16,7 +15,11 @@
         background-color: white;
         margin: 0;
     }
-    @include tabletsmallNote {
+    @include tablet {
+        width: 100%;
+    }
+    @include smallNote {
+        height: 100%;
         width: 768px;
         background: none;
         flex-direction: column;

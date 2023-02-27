@@ -25,7 +25,8 @@
             </div>
             <div class="secondBlockSearchContent">
                 <div class="catalogBlock">
-
+                    <div class="catalogBlockInfo">By genres</div> 
+                    
                     <div class="catalog"
                     @mouseenter  ="showMoreFuncOpen($event)"
                     @mouseleave ="showMoreFuncClose($event)">
@@ -167,6 +168,7 @@
                 </div>
                 <div class="parametrsBlock" v-if="windowW > 1023">
                     <div class="searchBySliders">
+                        <div class="searchBySlidersInfo">By parametrs</div> 
                         <div class="sliderPrice" @mouseover="showValue.opacity = 1" @mouseleave="showValue.opacity = 0">
                             <input type="range" id="input-left" min="0" max="21600" step="2400" v-model="minPrice">
                             <input type="range" id="input-right" min="0" max="21600" step="2400" v-model="maxPrice">
@@ -209,6 +211,7 @@
                         </div> 
                     </div> 
                     <div class="searchByCheckBoxes">
+                        <div class="searchByCheckBoxesInfo">By tags</div> 
                         <div class="hits checkbox">
                             <input type="checkbox" class="cb" name="Hits" id="Hits">
                             <div class="newcb"></div>  

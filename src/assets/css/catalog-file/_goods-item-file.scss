@@ -57,7 +57,8 @@
         width: 210px;
         z-index:11;
         box-shadow: 1px 1px 10px orange;
-        border-radius: 5px;
+        border:3px solid $main-color;
+        border-radius: 10px;
     }
     .GoodsItemsImage {
         display: block;
@@ -135,6 +136,7 @@
             }
         }
         .showMoreBtn {
+            background-color: $main-color;
             width: 75px;
             height: 25px;
             position: absolute;
