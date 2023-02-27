@@ -122,7 +122,7 @@
             }
         },
         mounted() {
-            this.GETBANNERSFROMAPI(), this.GETTESTBANNERSFROMAPI(), window.onscroll = this.changePositionBG, this.startQuestAnimation()
+            this.GETBANNERSFROMAPI(), this.GETTESTBANNERSFROMAPI(), window.addEventListener('scroll', this.changePositionBG), this.startQuestAnimation()
         },
         unmounted() {
             window.removeEventListener('scroll', this.changePositionBG)
