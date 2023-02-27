@@ -77,31 +77,5 @@
 </script>
 
 <style lang="scss">
-        .TestFileAnimatedBackgroundAnimBlock {
-            opacity: 1;
-            transition-property: all;
-            transition: 1s;
-            position: relative;
-            
-            &Img {
-                width: 100%;
-                height: 100%;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                border: 1px solid black;
-                border-radius: 9999px;
-                box-shadow: 5px 5px 10px black;
-                opacity: 0.5;
-            }
-            &Bubble {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border-radius: 9999px;
-                background: linear-gradient(4deg, rgba(226,247,255,1) 5%, rgba(195, 209, 209, 0.233) 50%, rgba(223,255,251,0.47942927170868344) 100%);
-            }
-        }
+        
 </style>
